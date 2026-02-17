@@ -115,3 +115,4 @@ See [docs/lan-access.md](docs/lan-access.md) for full details, certificate steps
 ### Security Hardening (Feb 2026)
 
 - Bind address changed from `0.0.0.0` to `127.0.0.1`. The server no longer listens on all network interfaces, preventing other devices on the local network from reaching the WebSocket and `/metrics` endpoints. Use a reverse proxy (Traefik, nginx) for intentional LAN or public exposure.
+- `/docs` and `/redoc` endpoints disabled. Re-enable in development by removing `docs_url=None, redoc_url=None` from the `FastAPI()` constructor in `app.py`.

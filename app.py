@@ -52,7 +52,7 @@ ORCHESTRATOR_BACKEND = os.getenv("ORCHESTRATOR_BACKEND", "in-memory")
 AUDIO_ENCRYPTION_KEY = os.getenv("AUDIO_ENCRYPTION_KEY")
 NEMO_DIARIZATION_ENABLED = os.getenv("NEMO_DIARIZATION_ENABLED", "false").lower() == "true"
 
-app = FastAPI()
+app = FastAPI(docs_url=None, redoc_url=None)
 
 # Mount static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
